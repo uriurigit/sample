@@ -1,0 +1,36 @@
+name: Simple Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  echo-message:
+    runs-on: ubuntu-latest
+    env:
+      SAMPLE_SECRET: ${{ secrets.SAMPLE_SECRET }}
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v4
+
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          repository: owner/sample
+          path: sample
+
+      - name: Install dependencies
+        run: |
+          cd sample
+          npm install
+
+      - name: Build
+        run: |
+          cd sample
+          npm run build
+
+      - name: Run application
+        run: |
+          cd sample
+          npm start
