@@ -16,6 +16,8 @@ export async function start () {
 
   await writeFile('../check-sql/sample.sql', 'hello world', { encoding: 'utf8' })
 
+  console.log('?')
+
   process.exit(0)
 }
 
