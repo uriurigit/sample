@@ -40,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: output-check-sql-file
-          path: sample/check-sql/**
+          path: sample/dist/**
