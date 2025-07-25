@@ -14,7 +14,7 @@ export async function start () {
   const [rows] = await db.run({ sql: 'SELECT count(*) FROM device', params: {} })
   console.log(rows[0])
 
-  await writeFile('./check-sql/sample.sql', 'hello world', { encoding: 'utf8' })
+  await writeFile('../check-sql/sample.sql', 'hello world', { encoding: 'utf8' })
 
   process.exit(0)
 }
